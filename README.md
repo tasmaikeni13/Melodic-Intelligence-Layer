@@ -1,3 +1,10 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="License: MIT">
+  <img src="https://img.shields.io/badge/dependencies-numpy%20%7C%20pygame%20%7C%20sounddevice-brightgreen" alt="Dependencies">
+  <img src="https://img.shields.io/badge/AI-No%20Neural%20Networks-ff69b4.svg" alt="No Neural Networks">
+</p>
+
 # MIL — Melodic Intelligence Layer
 
 ### A Mathematical Theory of Algorithmic Piano Composition with Musical Identity, Without Neural Networks
@@ -73,6 +80,10 @@ The Character Space is a five-dimensional unit hypercube. Each point **c** = (e,
 | **Lyricism** | l | Percussive, rhythmic, detached articulation | Singing, flowing, sustained, arpeggiated |
 | **Volatility** | v | Steady, predictable, minimal contrast | Sudden dynamic shifts, surprising turns |
 
+<p align="center">
+  <img src="mil_figures/02_archetype_constellation.png" alt="Archetype Family Constellation" width="800">
+</p>
+
 The **character mapping** Phi: C -> P maps each vector to a complete parameter set governing all generation decisions. Every derived parameter is a continuous function of c, ensuring smooth interpolation between characters:
 
 ```
@@ -87,6 +98,9 @@ dynamic_magnitude(c)      = 10 + v * 15 + e * 8                      (range: 10-
 melody_centre(c)          = 72 - d * 8 + e * 4                       (MIDI note, range: 64-76)
 base_velocity(c)          = 45 + e * 40                               (range: 45-85)
 ```
+<p align="center">
+  <img src="mil_figures/03_character_parameter_mapping.png" alt="Character Parameter Mapping" width="800">
+</p>
 
 Time signature selection is governed by a decision tree over lyricism and energy, producing 4/4, 3/4, or 6/8 metre. Accompaniment patterns (Alberti bass, arpeggiated, block chords, waltz, stride, tremolo) are selected by weighted sampling where the weights are continuous functions of the character vector and current metre.
 
@@ -102,6 +116,10 @@ Twenty archetypes serve as fixed reference points in Character Space. They are p
 | **Virtuosic** | Etude, Toccata | Technical density, maximum complexity and energy |
 | **Free** | Rhapsody, Fantasia | High volatility, unpredictable character evolution |
 | **Structured** | March, Prelude, Impromptu | Clear rhythmic identity, moderate complexity |
+
+<p align="center">
+  <img src="mil_figures/01_character_space_scatter.png" alt="Character Space Scatter Plot" width="800">
+</p>
 
 The system also accepts random points in C (producing pieces with unique unnamed characters) and supports interpolation between archetypes for hybrid characters.
 
@@ -132,6 +150,10 @@ Ten historically-inspired pianist profiles serve as reference points (minimum pa
 | **Richter** | 0.35 | 0.68 | 0.52 | 0.80 | 0.28 | 0.12 | Austere, powerful, intimate |
 | **Liszt** | 0.72 | 0.82 | 0.55 | 0.95 | 0.72 | 0.78 | Flamboyant, transcendental virtuosity |
 | **Chopin** | 0.78 | 0.28 | 0.62 | 0.62 | 0.68 | 0.82 | Lyrical, elastic, ornament-rich |
+
+<p align="center">
+  <img src="mil_figures/10_pianist_radar.png" alt="Pianist Radar Chart" width="600">
+</p>
 
 The **performance mapping** Psi: P -> Q converts each vector into concrete interpretation parameters:
 
@@ -169,6 +191,10 @@ c_eff(bar_i) = c_attractor + offset * exp(-mu * bars_since_section_start)
                + pink_noise(t) * volatility
 ```
 
+<p align="center">
+  <img src="mil_figures/05_character_flow_ode.png" alt="Continuous Character Flow" width="800">
+</p>
+
 This produces natural drift within sections and sharp contrast between them, replacing the unrealistic assumption of constant character per section.
 
 ### 2.4 Harmonic Color Spectrum
@@ -187,6 +213,10 @@ As H increases, progressively richer harmonic vocabulary becomes available:
 | H > 0.55 | Augmented sixth chords (It6, Fr6, Ger6) | (H - 0.55) * 0.12 |
 | H > 0.65 | Chromatic mediants (bIII, bVI) | (H - 0.65) * 0.10 |
 | H > 0.75 | Tritone substitutions | (H - 0.75) * 0.08 |
+
+<p align="center">
+  <img src="mil_figures/04_harmonic_color_spectrum.png" alt="Harmonic Color Spectrum" width="800">
+</p>
 
 This means a bright simple piece (Lullaby, H ~ 0.13) uses only diatonic harmony, while a dark complex piece (Scherzo, H ~ 0.65) freely employs Neapolitans and augmented sixths. The vocabulary expands continuously and non-linearly with the character vector, mirroring how real composers employ chromatic devices.
 
@@ -247,6 +277,10 @@ w_r   = 0.20 + energy * 0.10                 (rhythmic tension higher in energet
 w_reg = 0.20                                  (registral tension constant)
 ```
 
+<p align="center">
+  <img src="mil_figures/06_tension_field.png" alt="Tension Field Over 32 Bars" width="800">
+</p>
+
 The tension gradient dT/dt feeds back into the generator: rising tension sustains climactic building; falling tension triggers resolution. This creates natural phrase-level dramatic arcs without explicit programming of "climax" or "resolution."
 
 ### 2.8 Register Geography
@@ -277,6 +311,10 @@ R(t) = max(0, theta - F_m(t))            (recall pressure)
 theta = 0.6 - volatility * 0.3           (range: 0.30-0.60)
 ```
 
+<p align="center">
+  <img src="mil_figures/07_thematic_memory_decay.png" alt="Thematic Memory Decay" width="800">
+</p>
+
 High recall pressure biases the generator toward identity or fragmentation transforms, creating the sense that the music "remembers" its themes. High-volatility pieces have lower theta (more tolerant of novelty); low-volatility pieces insistently recall familiar material.
 
 ### 2.10 Self-Listening Feedback Loop
@@ -298,6 +336,10 @@ Target values are derived from the character vector (e.g., target_range = 8 + en
 ## 3. Generation Pipeline
 
 The complete pipeline follows a strict top-down hierarchy:
+
+<p align="center">
+  <img src="mil_figures/08_generation_pipeline.png" alt="MIL Generation Pipeline" width="500">
+</p>
 
 ```
 MIL_GENERATE(num_bars, key_root, scale_type, bpm, character, pianist):
@@ -408,6 +450,10 @@ Melodic-Intelligence-Layer/
 ```
 
 The engine (`mil_engine.py`) is entirely self-contained — it depends only on `numpy` and Python's standard library. It takes a character vector and optional pianist vector and returns a list of timed, velocity-marked note events. The UI layer (`main.py` + supporting modules) handles rendering and audio.
+
+<p align="center">
+  <img src="mil_figures/09_module_diagram.png" alt="Module Architecture" width="800">
+</p>
 
 ---
 
