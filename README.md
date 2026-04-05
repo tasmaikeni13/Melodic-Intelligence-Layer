@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python 3.10+">
-  <img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="License: MIT">
+  <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache 2.0">
   <img src="https://img.shields.io/badge/dependencies-numpy%20%7C%20pygame%20%7C%20sounddevice-brightgreen" alt="Dependencies">
   <img src="https://img.shields.io/badge/AI-No%20Neural%20Networks-ff69b4.svg" alt="No Neural Networks">
 </p>
