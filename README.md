@@ -4,8 +4,6 @@
 
 ---
 
-## Abstract
-
 MIL (Melodic Intelligence Layer) is a complete mathematical framework for algorithmic piano composition that solves the fundamental problem of **musical identity** — generating pieces that possess the distinctive character separating a nocturne from a march, a waltz from a toccata, a ballade from an etude. The system rests on the insight that musical grammar (scales, chord progressions, voice leading) is necessary but radically insufficient: it defines the ocean of *valid* music but provides no mechanism for navigating to *specific, memorable* regions within it.
 
 The core innovation is the **Character Space** — a five-dimensional unit hypercube C = [0, 1]^5 where each point defines a complete, internally consistent set of generation constraints. The five dimensions (Energy, Darkness, Complexity, Lyricism, Volatility) jointly govern every parameter of the compositional process: tempo, metre, motif shape, harmonic vocabulary, rhythmic density, textural pattern, register, and dynamic range. Twenty named archetypes — spanning lyrical, dance, dramatic, virtuosic, free, and structured families — are fixed points in this space, but any coordinate produces a unique piece with coherent identity.
@@ -40,7 +38,6 @@ The complete system is fully specified, deterministic given a random seed and ch
 10. [Parameter Reference](#10-parameter-reference)
 11. [Design Philosophy](#11-design-philosophy)
 12. [License](#12-license)
-13. [Citation](#13-citation)
 
 ---
 
@@ -376,7 +373,7 @@ The theory paper proves six formal theorems about MIL's output:
 ## 5. Repository Structure
 
 ```
-mil/
+Melodic-Intelligence-Layer/
 ├── README.md                       # This document
 ├── mil.md                          # Full mathematical theory (1,262 lines, 23 sections)
 │
@@ -419,8 +416,8 @@ The engine (`mil_engine.py`) is entirely self-contained — it depends only on `
 **Requirements:** Python 3.10 or higher. Tested on Windows 10/11, macOS 13+, and Ubuntu 22.04.
 
 ```bash
-git clone https://github.com/yourusername/mil.git
-cd mil/piano
+git clone https://github.com/tasmaikeni13/Melodic-Intelligence-Layer.git
+cd Melodic-Intelligence-Layer/piano
 pip install -r requirements.txt
 ```
 
@@ -626,22 +623,4 @@ The limitation is equally clear: MIL cannot produce pieces with the long-range n
 
 ## 12. License
 
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## 13. Citation
-
-If you use MIL in research, creative work, or derivative projects:
-
-```bibtex
-@software{mil2026,
-  title     = {MIL: Character-Driven Hierarchical Piano Composition},
-  subtitle  = {A Mathematical Theory of Musical Identity Without Neural Networks},
-  year      = {2026},
-  url       = {https://github.com/yourusername/mil},
-  note      = {5D Character Space, 6D Performance Space, 20 archetypes, 10 pianist profiles,
-               continuous character flow, harmonic color spectrum, tension field,
-               thematic memory, self-listening feedback. Pure mathematics, no neural networks.}
-}
-```
+Apache 2.0 License. See [LICENSE](LICENSE) for details.
