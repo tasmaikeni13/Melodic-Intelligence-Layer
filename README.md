@@ -489,6 +489,10 @@ cd piano
 python main.py
 ```
 
+<p align="center">
+  <img src="mil_figures/piano.png" alt="MIL Interactive Interface" width="900">
+</p>
+
 The application opens a concert grand piano visualisation with controls arranged in three rows:
 
 **Row 1 — Composition Parameters:**
